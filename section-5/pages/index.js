@@ -1,15 +1,16 @@
 import path from "path";
 import fs from "fs/promises";
-import Link from 'next/Link';
-import { json } from "react-router-dom";
-import { NOTFOUND } from "dns";
+import Link from "next/Link";
+
 
 function HomePage(props) {
   const { products } = props;
   return (
     <ul>
       {products.map((product) => (
-        <li key={product.id}><Link href={'/${product.id}'}>{product.title}</Link></li>
+        <li key={product.id}>
+          <Link href={`/${product.id}`}>{product.title}</Link>
+        </li>
       ))}
     </ul>
   );
@@ -24,9 +25,9 @@ export async function getStaticProps(context) {
   if (!data) {
     return {
       redirect: {
-        destination: '/no-data'
-      }
-    }
+        destination: "/no-data",
+      },
+    };
   }
 
   if (data.products.length === 0) {
