@@ -54,7 +54,7 @@ export async function getStaticPaths() {
 
   return {
     paths: athWithParams,
-    fallback: true,
+    fallback: false,
   };
 }
 

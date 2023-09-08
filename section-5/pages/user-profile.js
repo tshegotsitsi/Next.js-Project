@@ -5,7 +5,7 @@ function UserProfilePage(props) {
 
 export default UserProfilePage;
 
-export  async function getSeverSideProps(context);{
+export  async function getSeverSideProps(context) {
     return {
         props: {
             username: 'Tshego'
