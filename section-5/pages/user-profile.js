@@ -6,6 +6,9 @@ function UserProfilePage(props) {
 export default UserProfilePage;
 
 export  async function getSeverSideProps(context) {
+    const { params, req, res } = context;
+
+    
     return {
         props: {
             username: 'Tshego'
