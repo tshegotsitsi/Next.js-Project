@@ -1,5 +1,6 @@
-import { Fragment } from "react/cjs/react.production.min";
+import { Fragment } from "react";
 import Hero from "../component/home-page/hero";
+
 
 function HomePage() {
   return (
