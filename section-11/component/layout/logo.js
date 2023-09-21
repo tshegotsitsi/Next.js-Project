@@ -1,7 +1,7 @@
-import classes from './logo.module.css';
+// import classes from "./logo-module.css";
 
-function Logo() {
-    return <div className={classes.logo}>Tshego' Blog</div>
-}
+// function Logo() {
+//     return <div className={classes.logo}>Tshego's Blog</div>
+// }
 
-export default Logo;
+// export default Logo;
