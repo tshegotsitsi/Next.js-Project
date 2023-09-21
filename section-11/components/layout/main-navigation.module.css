@@ -1,3 +1,4 @@
+/* .header */
 .header {
   width: 100%;
   height: 6rem;
@@ -6,8 +7,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 10%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added subtle box shadow */
 }
 
+/* .header ul */
 .header ul {
   list-style: none;
   display: flex;
@@ -16,24 +19,31 @@
   padding: 0;
 }
 
+/* .header li */
 .header li {
-  margin: 0 var(--size-4);
+  margin: 0 var(--size-2); 
 }
 
+/* .header a */
 .header a {
   color: var(--color-grey-100);
   font-size: var(--size-4);
+  text-decoration: none; 
+  transition: color 0.3s ease; 
 }
+
 
 .header a:hover,
 .header a:active,
 .header a.active {
   color: var(--color-grey-200);
+  font-weight: bold; /* Added bold font weight for active/hover state */
 }
 
 @media (min-width: 768px) {
+  /* Additional styles for larger screens */
   .header ul {
-    gap: 0.5rem;
+    gap: 1rem; /* Increased gap between list items */
   }
 
   .header a {
