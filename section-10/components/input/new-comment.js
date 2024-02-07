@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import classes from './new-comment.module.css';
 
-function NewComment(props) {
+function NewComment({ onAddComment }) {
   const [isInvalid, setIsInvalid] = useState(false);
 
   const emailInputRef = useRef();
@@ -11,24 +11,16 @@ function NewComment(props) {
   function sendCommentHandler(event) {
     event.preventDefault();
 
-    const enteredEmail = emailInputRef.current.value;
-    const enteredName = nameInputRef.current.value;
-    const enteredComment = commentInputRef.current.value;
+    const enteredEmail = emailInputRef.current.value.trim();
+    const enteredName = nameInputRef.current.value.trim();
+    const enteredComment = commentInputRef.current.value.trim();
 
-    if (
-      !enteredEmail ||
-      enteredEmail.trim() === '' ||
-      !enteredEmail.includes('@') ||
-      !enteredName ||
-      enteredName.trim() === '' ||
-      !enteredComment ||
-      enteredComment.trim() === ''
-    ) {
+    if (!enteredEmail || !enteredEmail.includes('@') || !enteredName || !enteredComment) {
       setIsInvalid(true);
       return;
     }
 
-    props.onAddComment({
+    onAddComment({
       email: enteredEmail,
       name: enteredName,
       text: enteredComment,
