@@ -1,10 +1,33 @@
+:root {
+  /* Theme colors */
+  --form-bg-color: #03be9f;
+  --btn-bg-color: #ffffff;
+  --input-bg-color: #dcfff9;
+  --border-color: #ccc;
+  --label-color: #ffffff;
+  
+  /* Spacing */
+  --form-padding: 1rem;
+  --control-margin-bottom: 0.5rem;
+  --label-margin-bottom: 0.5rem;
+  --input-padding: 0.25rem;
+  
+  /* Border radius */
+  --border-radius: 4px;
+  --form-border-radius: 6px;
+  
+  /* Box shadow */
+  --box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
 .form {
   margin: 2rem auto;
   width: 100%;
-  border-radius: 6px;
-  background-color: #03be9f;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  padding: 1rem;
+  max-width: 600px; /* Limiting form width for larger screens */
+  border-radius: var(--form-border-radius);
+  background-color: var(--form-bg-color);
+  box-shadow: var(--box-shadow);
+  padding: var(--form-padding);
 }
 
 .row {
@@ -14,29 +37,39 @@
 }
 
 .control {
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--control-margin-bottom);
   flex: 1;
-  min-width: 10rem;
+  min-width: 10rem; /* Adjust this to control the minimum width of inputs */
 }
 
 .control label {
   display: block;
   font-weight: bold;
-  margin-bottom: 0.5rem;
-  color: white;
+  margin-bottom: var(--label-margin-bottom);
+  color: var(--label-color);
   text-align: left;
 }
 
 .control input,
 .control textarea {
   font: inherit;
-  padding: 0.25rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  padding: var(--input-padding);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
   width: 100%;
-  background-color: #dcfff9;
+  background-color: var(--input-bg-color);
 }
 
 .form .btn {
-  background-color: white;
+  background-color: var(--btn-bg-color);
+  border-radius: var(--border-radius);
+  padding: var(--input-padding);
+  border: 1px solid var(--border-color); /* Add border to button for consistency */
+  cursor: pointer; /* Indicates clickable buttons */
+  transition: background-color 0.3s; /* Smooth background color transition for hover effect */
+}
+
+.form .btn:hover {
+  background-color: var(--form-bg-color);
+  color: var(--btn-bg-color);
 }
